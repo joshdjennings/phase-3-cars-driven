@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_19_051241) do
+ActiveRecord::Schema.define(version: 2022_09_20_035842) do
 
   create_table "cars", force: :cascade do |t|
     t.boolean "active"
@@ -23,6 +23,11 @@ ActiveRecord::Schema.define(version: 2022_09_19_051241) do
     t.string "fuel_type"
     t.string "transmission"
     t.string "drive"
+    t.integer "car_id"
+  end
+
+  create_table "garages", force: :cascade do |t|
+    t.integer "garage_id"
   end
 
 end

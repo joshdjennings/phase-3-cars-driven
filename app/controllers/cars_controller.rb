@@ -1,8 +1,9 @@
 class CarsController < ApplicationController
 
     get "/cars" do
-cars = Cars.all.to_json
-{message: "There are all the cars"}.to_json
-end
+        cars = Car.all
+        {message: "Here are all the cars"}.to_json
+        cars.to_json
+    end
 
 end

@@ -6,12 +6,4 @@ class ApplicationController < Sinatra::Base
     { message: "Good luck with your project!" }.to_json
   end
  
-  get "/cars" do
-    {message: "This is the index of all the cars"}.to_json
-  end
- 
-  get "cars/:id" do
-    {message: "This is one car"}.to_json
-  end
-
 end
