@@ -17,6 +17,6 @@ drive = ['FWD', 'RWD', 'AWD', '4WD']
 fuel_type = ['gas', 'diesel', 'hybrid', 'electricity']
 
 5.times {
-    Car.create({make:make.sample, model:'911', year:rand(1971..2022), color:color.sample, category:category.sample, motor:motor.sample, transmission:transmission.sample, drive:drive.sample, fuel_type:fuel_type.sample, active:true, car_id:rand})
+    Car.create({make:make.sample, model:'911', year:rand(1971..2022), color:color.sample, category:category.sample, motor:motor.sample, transmission:transmission.sample, drive:drive.sample, fuel_type:fuel_type.sample, active:true, car_id:rand(394)})
 }
 puts '✅ Done seeding!' 
