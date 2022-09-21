@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class Driver < ActiveRecord::Base
     has_one :garage
 
     has_many :cars

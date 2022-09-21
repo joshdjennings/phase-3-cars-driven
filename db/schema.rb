@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_20_035842) do
+ActiveRecord::Schema.define(version: 2022_09_21_025705) do
 
   create_table "cars", force: :cascade do |t|
     t.boolean "active"
@@ -26,8 +26,17 @@ ActiveRecord::Schema.define(version: 2022_09_20_035842) do
     t.integer "car_id"
   end
 
+  create_table "drivers", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.string "phone"
+    t.string "nationality"
+    t.string "quote"
+  end
+
   create_table "garages", force: :cascade do |t|
-    t.integer "garage_id"
+    t.string "driver"
+    t.string "number_of_cars"
   end
 
 end
