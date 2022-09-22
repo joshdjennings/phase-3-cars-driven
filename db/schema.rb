@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2022_09_21_025705) do
     t.string "transmission"
     t.string "drive"
     t.integer "car_id"
+    t.integer "driver_id"
   end
 
   create_table "drivers", force: :cascade do |t|
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(version: 2022_09_21_025705) do
   create_table "garages", force: :cascade do |t|
     t.string "driver"
     t.string "number_of_cars"
+    t.integer "driver_id"
   end
 
 end

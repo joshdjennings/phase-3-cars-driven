@@ -1,4 +1,4 @@
 class Garage < ActiveRecord::Base
-    has_many :cars
+    has_many :car
     belongs_to :driver
 end

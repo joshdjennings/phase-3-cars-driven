@@ -12,6 +12,7 @@ class Cars < ActiveRecord::Migration[6.1]
     t.string :transmission
     t.string :drive
     t.integer :car_id
+    t.integer :driver_id
     end
   end
 end

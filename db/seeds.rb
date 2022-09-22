@@ -19,11 +19,20 @@ drive = ['FWD', 'RWD', 'AWD', '4WD']
 
 fuel_type = ['gas', 'diesel', 'hybrid', 'electricity']
 
+Driver.destroy_all
+Car.destroy_all
+
 10.times {
     Driver.create({name:Faker::Name.name, age:rand(16..80), phone:Faker::PhoneNumber.cell_phone, nationality: Faker::Nation.nationality, quote:Faker::ChuckNorris.fact})
 }
 
+10.times{
+    Garage.create({driver:Driver.name.sample})
+
+}
 20.times {
     Car.create({active:active.sample, make:make.sample, model:model.sample, year:rand(1971..2022), color:color.sample, category:category.sample, motor:motor.sample, transmission:transmission.sample, drive:drive.sample, fuel_type:fuel_type.sample, car_id:rand(911)})
 }
+Car.all.each {|c| c.update({driver_id: Driver.all.sample.id})}
+
 puts '✅ Done seeding!' 
