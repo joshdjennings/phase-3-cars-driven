@@ -23,9 +23,10 @@ Car.destroy_all
 # }
 
 20.times {
-    Car.create({make:make.sample, model:model.sample, year:rand(1971..2022), color:color.sample, category:category.sample, motor:motor.sample, transmission:transmission.sample, drive:drive.sample, fuel_type:fuel_type.sample})
+    Car.create({make:make.sample, model:model.sample, year:rand(1971..2022), color:color.sample, category:category.sample, motor:motor.sample, transmission:transmission.sample, drive:drive.sample, fuel_type:fuel_type.sample, year_bought:rand((DateTime.now - 360.months)..DateTime.now)})
 }
 
-Car.all.each{|c| c.update(driver_id: Driver.all.sample.id)}
+Car.all.each{|c| c.update(driver_id: Driver.all.sample.id, year_sold: Car.all.sample.year_bought)}
+
 Driver.all.each{|d| d.update(car_id: Car.all.sample.id)}
 puts '✅ Done seeding!' 
