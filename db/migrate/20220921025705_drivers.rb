@@ -6,6 +6,7 @@ class Drivers < ActiveRecord::Migration[6.1]
       t.string :phone
       t.string :nationality
       t.string :quote
+      # t.integer :garage_id
     end
   end
 end
