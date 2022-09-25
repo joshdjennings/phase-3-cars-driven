@@ -17,12 +17,9 @@ ActiveRecord::Schema.define(version: 2022_09_21_025705) do
     t.string "model"
     t.integer "year"
     t.string "color"
-    t.string "category"
     t.string "motor"
     t.string "fuel_type"
-    t.string "transmission"
-    t.string "drive"
-    t.integer "year_bought"
+    t.integer "year_driven"
     t.integer "year_sold"
     t.string "driver_name"
   end
@@ -30,9 +27,7 @@ ActiveRecord::Schema.define(version: 2022_09_21_025705) do
   create_table "drivers", force: :cascade do |t|
     t.string "name"
     t.integer "age"
-    t.string "phone"
     t.string "quote"
-    t.integer "num_of_cars"
   end
 
 end
