@@ -1,13 +1,11 @@
 class CarsController < ApplicationController
 
     get "/cars" do
-        cars = Car.all
-        {message: "Here are all the cars"}.to_json
-        cars.to_json
+        cars = Car.all.to_json
     end
 
     post "/cars" do
-        car = Car.create({active:params[:active], make:params[:make], model:params[:model], year:params[:year], color:params[:color], category:params[:category], motor:params[:motor], fuel_type:params[:fuel_type], transmission:params[:transmission], drive:params[:drive], car_id:params[:car_id]})
+        car = Car.create(params)
         car.to_json(include: :car)
       end
     

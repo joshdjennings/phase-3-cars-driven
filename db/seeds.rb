@@ -15,7 +15,7 @@ Driver.destroy_all
 Car.destroy_all
 
 5.times {
-    Driver.create({name:Faker::Name.name, age:rand(16..65), phone:Faker::PhoneNumber.cell_phone, quote:Faker::ChuckNorris.fact})
+    Driver.create({name:Faker::Name.name, age:rand(16..65), quote:Faker::ChuckNorris.fact})
 }
 
 20.times {
