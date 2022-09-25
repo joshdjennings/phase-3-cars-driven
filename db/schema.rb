@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2022_09_21_025705) do
     t.string "transmission"
     t.string "drive"
     t.integer "year_bought"
-    t.string "year_sold"
+    t.integer "year_sold"
     t.string "driver_name"
   end
 
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 2022_09_21_025705) do
     t.string "name"
     t.integer "age"
     t.string "phone"
-    t.string "nationality"
     t.string "quote"
     t.integer "num_of_cars"
   end

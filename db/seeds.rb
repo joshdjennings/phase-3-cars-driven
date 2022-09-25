@@ -14,14 +14,15 @@ fuel_type = ['gas', 'diesel', 'hybrid', 'electricity']
 Driver.destroy_all
 Car.destroy_all
 
-10.times {
-    Driver.create({name:Faker::Name.name, age:rand(16..80), phone:Faker::PhoneNumber.cell_phone, nationality: Faker::Nation.nationality, quote:Faker::ChuckNorris.fact})
+5.times {
+    Driver.create({name:Faker::Name.name, age:rand(16..65), phone:Faker::PhoneNumber.cell_phone, quote:Faker::ChuckNorris.fact})
 }
 
 20.times {
     Car.create({make:make.sample, model:model.sample, year:rand(1971..2020), color:color.sample, category:category.sample, motor:motor.sample, transmission:transmission.sample, drive:drive.sample, fuel_type:fuel_type.sample})
 }
 
-Car.all.each{|c| c.update(driver_name:Driver.all.sample.name, year_bought:(c.year+rand(0..5)), year_sold:"Unknown")}
+Car.all.each{|c| c.update(driver_name:Driver.all.sample.name, year_bought:(c.year+rand(0..5)))}
+Car.all.each{|c| c.update(year_sold:(c.year_bought+rand(0..5)))}
 # Driver.all.each |d| d.update(num_of_cars:Car.all.fi)
 puts '✅ Done seeding!' 
