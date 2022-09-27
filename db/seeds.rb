@@ -10,16 +10,15 @@ motor = ['4-cyl', '5-cyl', '6-cyl', '8-cyl', '10-cyl', '12-cyl', 'Electric Motor
 transmission = ['manual', 'automatic']
 drive = ['FWD', 'RWD', 'AWD', '4WD']
 fuel_type = ['gas', 'diesel', 'hybrid', 'electricity']
-
 Driver.destroy_all
 Car.destroy_all
 
-5.times {
+10.times {
     Driver.create({name:Faker::Name.name, age:rand(16..65), quote:Faker::ChuckNorris.fact})
 }
 
 20.times {
-    Car.create({make:make.sample, model:model.sample, year:rand(1971..2020), color:color.sample, category:category.sample, motor:motor.sample, fuel_type:fuel_type.sample,transmission:transmission.sample, drive:drive.sample })
+    Car.create({make:make.sample, model:model.sample, year:rand(1971..2020), color:color.sample, category:category.sample, motor:motor.sample, fuel_type:fuel_type.sample,transmission:transmission.sample, drive:drive.sample, active:true})
 }
 
 Car.all.each{|c| c.update(driver_name:Driver.all.sample.name, year_bought:(c.year+rand(0..5)))}
