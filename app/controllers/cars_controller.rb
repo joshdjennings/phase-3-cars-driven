@@ -4,6 +4,12 @@ class CarsController < ApplicationController
         cars = Car.all.to_json
     end
 
+    get "cars/:id" do
+      car = Car.find(params[:id])
+      car.to_json
+    end
+
+
     post "/cars" do
         car = Car.create({make:params[:make], model:params[:model], year:params[:year], color:params[:color], category:params[:category], motor:params[:motor], fuel_type:params[:fuel_type], transmission:params[:transmission], drive:params[:drive], year_bought:params[:year_bought], year_sold:params[:year_sold], driver_name:params[:driver_name], active:params[:active]})
         car.to_json
@@ -14,6 +20,8 @@ class CarsController < ApplicationController
       car.update({active:params[:active]})
       car.to_json
     end
+
+    # add year sold to patch
     
     #Delete a car
     delete "/cars/:id" do
