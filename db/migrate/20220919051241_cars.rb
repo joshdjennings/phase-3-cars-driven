@@ -11,7 +11,7 @@ class Cars < ActiveRecord::Migration[6.1]
     t.string :transmission
     t.string :drive
     t.integer :year_bought
-    t.integer :year_sold
+    t.boolean :sold
     t.boolean :active
     t.string :driver_name
     end

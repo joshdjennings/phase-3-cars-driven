@@ -10,6 +10,7 @@ motor = ['4-cyl', '5-cyl', '6-cyl', '8-cyl', '10-cyl', '12-cyl', 'Electric Motor
 transmission = ['manual', 'automatic']
 drive = ['FWD', 'RWD', 'AWD', '4WD']
 fuel_type = ['gas', 'diesel', 'hybrid', 'electricity']
+# sold = [true, false]
 Driver.destroy_all
 Car.destroy_all
 
@@ -18,11 +19,11 @@ Car.destroy_all
 }
 
 20.times {
-    Car.create({make:make.sample, model:model.sample, year:rand(1971..2020), color:color.sample, category:category.sample, motor:motor.sample, fuel_type:fuel_type.sample,transmission:transmission.sample, drive:drive.sample, active:true})
+    Car.create({make:make.sample, model:model.sample, year:rand(1971..2020), color:color.sample, category:category.sample, motor:motor.sample, fuel_type:fuel_type.sample,transmission:transmission.sample, drive:drive.sample, sold:true})
 }
 
 Car.all.each{|c| c.update(driver_name:Driver.all.sample.name, year_bought:(c.year+rand(0..5)))}
-Car.all.each{|c| c.update(year_sold:(c.year_bought+rand(0..5)))}
+# Car.all.each{|c| c.update(year_sold:(c.year_bought+rand(0..5)))}
 
 # Driver.all.each |d| d.update(num_of_cars:Car.all.fi)
 puts '✅ Done seeding!' 
