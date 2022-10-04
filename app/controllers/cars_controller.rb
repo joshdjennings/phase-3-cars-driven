@@ -10,7 +10,7 @@ class CarsController < ApplicationController
     end
 
     post "/cars" do
-        car = Car.create({make:params[:make], model:params[:model], year:params[:year], color:params[:color], category:params[:category], motor:params[:motor], fuel_type:params[:fuel_type], transmission:params[:transmission], drive:params[:drive], year_bought:params[:year_bought], year_sold:params[:year_sold], driver_name:params[:driver_name], sold:params[:sold]})
+        car = Car.create({make:params[:make], model:params[:model], year:params[:year], color:params[:color], category:params[:category], motor:params[:motor], fuel_type:params[:fuel_type], transmission:params[:transmission], drive:params[:drive], year_bought:params[:year_bought], driver_name:params[:driver_name], sold:true})
         car.to_json
     end
   

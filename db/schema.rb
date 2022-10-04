@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2022_09_21_025705) do
     t.string "drive"
     t.integer "year_bought"
     t.boolean "sold"
-    t.boolean "active"
     t.string "driver_name"
   end
 
