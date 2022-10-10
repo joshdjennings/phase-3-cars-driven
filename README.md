@@ -45,6 +45,9 @@ If you want to see my app up and running,
 You can start the backend server with:
 
 ```console
+#Install gems
+$ bundle
+#Run Server
 $ bundle exec rake server
 ```
 
@@ -54,6 +57,9 @@ This will run your server on port
 You can start the frontend server (in another terminal window) with:
 
 ```console
+#Update npm
+$ npm update
+#Run Frontend server
 $ npm start
 ```
 
