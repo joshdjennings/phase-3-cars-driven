@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2022_09_21_025705) do
     t.string "transmission"
     t.string "drive"
     t.integer "year_bought"
-    t.boolean "sold"
+    t.boolean "not_sold"
     t.string "driver_name"
   end
 

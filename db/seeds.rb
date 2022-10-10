@@ -10,18 +10,18 @@ transmission = ['manual', 'automatic']
 drive = ['FWD', 'RWD', 'AWD', '4WD']
 fuel_type = ['gas', 'diesel', 'hybrid', 'electricity']
 
-#Create 5 drivers (used faker gemand made sure the age of the driver is at least 16)
+#Create 5 drivers (used faker gem and made sure the age of the driver is at least 16)
 5.times {
     Driver.create({name:Faker::Name.name, age:rand(16..65), quote:Faker::ChuckNorris.fact})
 }
 
 #Create 10 cars
 10.times {
-    Car.create({make:make.sample, model:model.sample, year:rand(1971..2020), color:color.sample, category:category.sample, motor:motor.sample, fuel_type:fuel_type.sample,transmission:transmission.sample, drive:drive.sample, sold:true})
+    Car.create({make:make.sample, model:model.sample, year:rand(1971..2020), color:color.sample, category:category.sample, motor:motor.sample, fuel_type:fuel_type.sample,transmission:transmission.sample, drive:drive.sample, not_sold:true})
 }
 
 #Based on the 5 Drivers that were created, update the driver name
 #Based on the year the car was made, update the year bought to make sure it is greater than the year made
-Car.all.each{|c| c.update(driver_name:Driver.all.sample.name, year_bought:(c.year+rand(0..5)))}
+Car.all.each{|c| c.update(driver_name: Driver.all.sample.name, year_bought:(c.year+rand(0..5)))}
 
 puts '✅ Done seeding!' 
