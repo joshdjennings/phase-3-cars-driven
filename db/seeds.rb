@@ -17,7 +17,7 @@ fuel_type = ['gas', 'diesel', 'hybrid', 'electricity']
 
 #Create 10 cars
 10.times {
-    Car.create({make:make.sample, model:model.sample, year:rand(1971..2020), color:color.sample, category:category.sample, motor:motor.sample, fuel_type:fuel_type.sample,transmission:transmission.sample, drive:drive.sample, sold:true})
+    Car.create({make:make.sample, model:model.sample, year:rand(1971..2020), color:color.sample, category:category.sample, motor:motor.sample, fuel_type:fuel_type.sample,transmission:transmission.sample, drive:drive.sample, not_sold:true})
 }
 
 #Based on the 5 Drivers that were created, update the driver name
