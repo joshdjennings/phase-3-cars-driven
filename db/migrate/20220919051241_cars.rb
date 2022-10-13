@@ -4,15 +4,9 @@ class Cars < ActiveRecord::Migration[6.1]
     t.string :make
     t.string :model
     t.integer :year
-    t.string :color
-    t.string :category
-    t.string :motor
-    t.string :fuel_type
-    t.string :transmission
-    t.string :drive
     t.integer :year_bought
     t.boolean :not_sold
-    t.string :driver_name
+    t.integer :driver_id
     end
   end
 end
