@@ -25,6 +25,5 @@ model = ['NSX', 'Giulia Quadafoglio', 'Vantage', 'R8', 'M2 CS', 'Continental', '
 #Based on the 5 Drivers that were created, update the driver name
 #Based on the year the car was made, update the year bought to make sure it is greater than the year made
 Car.all.each{|c| c.update(driver_id: Driver.all.sample.id, year_bought:(c.year+rand(0..5)))}
-Driver.all.each{|d| d.update(num_of_cars: d.cars.count)}
 
 puts '✅ Done seeding!'

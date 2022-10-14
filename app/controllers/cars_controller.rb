@@ -8,7 +8,7 @@ class CarsController < ApplicationController
 
   # Get one car
   get '/cars/:id' do
-    car = Car.find(params[:id])
+    car = Car.find_by(id: params[:id])
     car.to_json
   end
 
@@ -20,7 +20,7 @@ class CarsController < ApplicationController
 
   # Update a car by marking it as Sold
   patch '/cars/:id' do
-    car = Car.find(params[:id])
+    car = Car.find_by(id: params[:id])
     car.update({ not_sold: params[:not_sold] })
     car.to_json
   end

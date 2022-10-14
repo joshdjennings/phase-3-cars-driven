@@ -3,7 +3,17 @@
 class DriversController < ApplicationController
   # Get all Drivers
   get '/drivers' do
-    drivers = Driver.all.to_json
+    drivers = Driver.all.to_json(include: :cars)
+    end
+
+  # Get one Driver
+  get '/drivers/:id' do
+    driver = Driver.find_by(id: params[:id])
+    if driver
+        driver.to_json(include: :cars)
+      else
+      '404 driver not found'
+      end
   end
 
   # Create a Driver
@@ -14,7 +24,7 @@ class DriversController < ApplicationController
 
   # Delete a Driver
   delete '/drivers/:id' do
-    driver = Driver.find(params[:id])
+    driver = Driver.find_by(id: params[:id])
     driver.destroy
     { message: 'driver deleted' }.to_json
   end
